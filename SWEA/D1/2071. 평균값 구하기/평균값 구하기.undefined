@@ -1,0 +1,28 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Solution {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = null;
+
+		int T = Integer.parseInt(br.readLine());
+		for (int t = 1; t < T + 1; t++) {
+			st = new StringTokenizer(br.readLine());
+			int sum = 0;
+
+			for (int i = 0; i < 10; i++) {
+				int num = Integer.parseInt(st.nextToken());
+				sum += num;
+			}
+
+			double result = sum / 10.0;
+			long rounded = Math.round(result);
+
+			System.out.println("#" + t + " " + rounded);
+		}
+	}
+}
