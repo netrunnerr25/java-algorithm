@@ -1,0 +1,36 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Solution {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = null;
+
+		// 각 월에해당하는 마지막날짜(1~12월)
+		int[] days = { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+
+		int T = Integer.parseInt(br.readLine());
+
+		for (int t = 1; t <= T; t++) {
+			String date = br.readLine();
+
+			// 연, 월, 일 자르기 substring(시작인덱스, 끝 인덱스 +1)
+			String yearStr = date.substring(0, 4);
+			String monthStr = date.substring(4, 6);
+			String dayStr = date.substring(6, 8);
+
+			// 숫자로 변환
+			int month = Integer.parseInt(monthStr);
+			int day = Integer.parseInt(dayStr);
+
+			if (month >= 1 && month <= 12 && day >= 1 && day <= days[month]) {
+				System.out.println("#" + t + " " + yearStr + "/" + monthStr + "/" + dayStr);
+			} else {
+				System.out.println("#" + t + " -1");
+			}
+		}
+	}
+}
