@@ -1,0 +1,22 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Solution {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = null;
+
+		String text = br.readLine();
+		// replace([기존문자],[바꿀문자])
+		for (int i = 0; i < 26; i++) {
+			char x = (char) ('a' + i);
+			char y = (char) ('A' + i);
+			text = text.replace(x, y);
+		}
+		System.out.print(text);
+
+	}
+}
