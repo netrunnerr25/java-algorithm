@@ -1,0 +1,31 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Solution {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = null;
+
+		st = new StringTokenizer(br.readLine());
+		int A = Integer.parseInt(st.nextToken());
+		int B = Integer.parseInt(st.nextToken());
+
+		int a = 1; // 가위 a일때 a가 출력되는상황 b = 3일때
+		int b = 2; // 바위 a일때 a가 출력되는상황 b = 1
+		int c = 3; // 보 a일때 a가 출력되는상황 b = 2
+		// 비기는 경우 없음
+
+		if (A == a && B == c) {
+			System.out.print('A');
+		} else if (A == b && B == a) {
+			System.out.print('A');
+		} else if (A == c && B == b) {
+			System.out.print('A');
+		} else
+			System.out.println('B');
+
+	}
+}
