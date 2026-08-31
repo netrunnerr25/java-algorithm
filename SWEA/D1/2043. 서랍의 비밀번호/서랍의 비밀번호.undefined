@@ -1,0 +1,26 @@
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class Solution {
+	public static void main(String[] args) throws IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		StringTokenizer st = null;
+
+		st = new StringTokenizer(br.readLine());
+		int p = Integer.parseInt(st.nextToken());
+		int k = Integer.parseInt(st.nextToken());
+
+		int count = 1; //초기값도 확인해야해서 1부터 시
+
+		while (k != p) {
+			++count; // 움직인횟수
+			k = (k + 1) % 1000; //이동한 
+
+		}
+		System.out.println(count);
+
+	}
+}
